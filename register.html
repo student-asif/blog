@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+  <!-- Background Video Outside the Wrapper -->
+  <div class="bg-video">
+    <video autoplay loop muted playsinline>
+      <source src="video/backgroundvideo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Login Form -->
+  <div class="wrapper">
+  <h1>Signup</h1>
+  <form id="signupForm">
+    <div class="input-box">
+      <input type="text" id="name" placeholder="Name" required />
+      <i class="fa-solid fa-user"></i>
+    </div>
+    <div class="input-box">
+      <input type="email" id="email" placeholder="Email" required />
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+    <div class="input-box">
+      <input type="password" id="password" placeholder="Password" required />
+      <i class="fa-solid fa-lock"></i>
+    </div>
+    <div class="input-box">
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+      <i class="fa-solid fa-lock"></i>
+    </div>
+
+    <div class="remember-forgot">
+      <label><input type="checkbox" /> Remember me</label>
+      <a href="#">Forgot password?</a>
+    </div>
+
+    <button type="button" class="btn" onclick="validateAndLogin()">Sign In</button>
+  </form>
+
+<script>
+  function validateAndLogin() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
+    const confirmPassword = document.getElementById("confirmPassword").value.trim();
+
+    if (name === "" || email === "" || password === "" || confirmPassword === "") {
+      alert( "Please fill in all fields.");
+    } else if (password !== confirmPassword) {
+      alert("Password doesn't match");
+    } else {
+      
+      window.location.href = "login.html";
+    }
+  }
+</script>
+
+
+      <div class="register-link">
+        <p>Don't have an account? <a href="home.html">Register</a></p>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

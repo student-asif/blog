@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1 class="logo-text">Blog</h1>
+        </div>
+
+        <!-- Menu Toggle Button for Mobile -->
+        <button id="menu-toggle">☰ Menu</button>
+
+        <ul class="nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gellery.html">Gallery</a></li>
+            <li><a href="about.html">about us</a></li>
+            <li class="dropdown">
+                <a href="#"><i class="fa-solid fa-user"></i> Blog 
+                    <i class="fa-solid fa-circle-chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="login.html" ">Login</a></li>
+                </ul>
+            </li>
+        </ul>
+    </header> 
+
+    <!-- Post Slider -->
+    <div class="page-wrapper">
+        <div class="post-slider">
+            <h1 class="slider-title">Trending Posts</h1>
+            <i class="fas fa-chevron-left prev"></i>
+            <i class="fas fa-chevron-right next"></i>
+            <div class="post-wrapper">
+                <div class="post">
+                  <img src="img/img1.jpg" alt="" class="slider-image">
+                  <div class="post-info">
+                    <h4><a href="single.html">Post 1</a></h4>
+                  </div>
+                </div>
+                <div class="post">
+                  <img src="img/img2.jpg" alt="" class="slider-image">
+                  <div class="post-info">
+                    <h4><a href="#">Post 2</a></h4>
+                  </div>
+                </div>
+                <div class="post">
+                  <img src="img/img4.jpg" alt="" class="slider-image">
+                  <div class="post-info">
+                    <h4><a href="#">Post 3</a></h4>
+                  </div>
+                </div>
+                <div class="post">
+                  <img src="img/img5.jpg" alt="" class="slider-image">
+                  <div class="post-info">
+                    <h4><a href="#">Post 4</a></h4>
+                  </div>
+                </div>
+              </div> <!-- Close .post-wrapper -->
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Slick Carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Custom Script -->
+    <script>
+        $(document).ready(function(){
+            // Menu Toggle
+            $('#menu-toggle').on('click', function(){
+                $('.nav').toggleClass('showing');
+            });
+
+            // Slick Carousel for Post Slider
+            $('.post-wrapper').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true, // Enable autoplay
+                autoplaySpeed: 2000, // Speed for autoplay (in milliseconds)
+                nextArrow: $('.next'),
+                prevArrow: $('.prev'),
+                dots: true,
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+<!--content-->
+<div class="content clearfix">
+    <div class="main-content">
+      <h1 class="recent-post-title"><strong>Recent Posts</strong></h1>
+
+      <div class="post">
+        <img src="img/img1.jpg" alt="Post image" class="post-image">
+        <div class="post-preview">
+          <h2 style="font-size: 1.5rem;">
+            <a href="single.html">Pain </a>
+          </h2>
+          <div class="post-meta">
+            <i class="fa-regular fa-user"></i> Awa Melvine &nbsp;&nbsp;
+            <i class="fa-regular fa-calendar"></i> April 11, 2025
+          </div>
+          <p class="preview-text">
+            Those who do not know know pain they can never understand the true peace
+          </p>
+          <a href="single.html" class="btn">Read More</a>
+        </div>
+      </div>
+      
+    <div class="post">
+      <img src="img/img2.jpg" alt="Post image" class="post-image">
+      <div class="post-preview">
+        <h2 style="font-size: 1.5rem;">
+          <a href="single.html">Hope</a>
+        </h2>
+        <div class="post-meta">
+          <i class="fa-regular fa-user"></i> John Doe &nbsp;&nbsp;
+          <i class="fa-regular fa-calendar"></i> April 12, 2025
+        </div>
+        <p class="preview-text">
+          Hope is the fuel that drives us to keep going, even when everything seems lost.
+        </p>
+        <a href="single.html" class="btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/img3 .jpg" alt="Post image" class="post-image">
+      <div class="post-preview">
+        <h2 style="font-size: 1.5rem;">
+          <a href="single.html">Strength</a>
+        </h2>
+        <div class="post-meta">
+          <i class="fa-regular fa-user"></i> Jane Smith &nbsp;&nbsp;
+          <i class="fa-regular fa-calendar"></i> April 13, 2025
+        </div>
+        <p class="preview-text">
+          Strength doesn’t come from what you can do, but from overcoming what you once thought you couldn’t.
+        </p>
+        <a href="single.html" class="btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/img4.jpg" alt="Post image" class="post-image">
+      <div class="post-preview">
+        <h2 style="font-size: 1.5rem;">
+          <a href="single.html">Courage</a>
+        </h2>
+        <div class="post-meta">
+          <i class="fa-regular fa-user"></i> Mark Williams &nbsp;&nbsp;
+          <i class="fa-regular fa-calendar"></i> April 14, 2025
+        </div>
+        <p class="preview-text">
+          Courage is not the absence of fear, but the triumph over it.
+        </p>
+        <a href="single.html" class="btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/img5.jpg" alt="Post image" class="post-image">
+      <div class="post-preview">
+        <h2 style="font-size: 1.5rem;">
+          <a href="single.html">Love</a>
+        </h2>
+        <div class="post-meta">
+          <i class="fa-regular fa-user"></i> Emily Adams &nbsp;&nbsp;
+          <i class="fa-regular fa-calendar"></i> April 15, 2025
+        </div>
+        <p class="preview-text">
+          Love is the only thing that can be spread infinitely, yet never diminish.
+        </p>
+        <a href="single.html" class="btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/img6.jpeg" alt="Post image" class="post-image">
+      <div class="post-preview">
+        <h2 style="font-size: 1.5rem;">
+          <a href="single.html">Growth</a>
+        </h2>
+        <div class="post-meta">
+          <i class="fa-regular fa-user"></i> Sarah Lee &nbsp;&nbsp;
+          <i class="fa-regular fa-calendar"></i> April 16, 2025
+        </div>
+        <p class="preview-text">
+          Growth is uncomfortable but necessary for personal evolution.
+        </p>
+        <a href="single.html" class="btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/img7.jpeg" alt="Post image" class="post-image">
+      <div class="post-preview">
+        <h2 style="font-size: 1.5rem;">
+          <a href="single.html">Wisdom</a>
+        </h2>
+        <div class="post-meta">
+          <i class="fa-regular fa-user"></i> David Johnson &nbsp;&nbsp;
+          <i class="fa-regular fa-calendar"></i> April 17, 2025
+        </div>
+        <p class="preview-text">
+          Wisdom comes not from age but from learning through experience.
+        </p>
+        <a href="single.html" class="btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/img8.jpeg" alt="Post image" class="post-image">
+      <div class="post-preview">
+        <h2 style="font-size: 1.5rem;">
+          <a href="single.html">Faith</a>
+        </h2>
+        <div class="post-meta">
+          <i class="fa-regular fa-user"></i> Michael Brown &nbsp;&nbsp;
+          <i class="fa-regular fa-calendar"></i> April 18, 2025
+        </div>
+        <p class="preview-text">
+          In Islamic tradition, Qisas, also known as "eye for an eye," is the principle of retribution for crimes involving physical harm or injury.
+        </p>
+        <a href="single.html" class="btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/img9.jpeg" alt="Post image" class="post-image">
+      <div class="post-preview">
+        <h2 style="font-size: 1.5rem;">
+          <a href="single.html">Freedom</a>
+        </h2>
+        <div class="post-meta">
+          <i class="fa-regular fa-user"></i> Alice Green &nbsp;&nbsp;
+          <i class="fa-regular fa-calendar"></i> April 19, 2025
+        </div>
+        <p class="preview-text">
+          Freedom is not just about doing what you want, but being who you are.Bangladesh gained independence from Pakistan on March 26, 1971, after a nine-month war of liberation,
+        </p>
+        <a href="single.html" class="btn">Read More</a>
+      </div>
+    </div>
+
+    <div class="post">
+      <img src="img/img10.jpeg" alt="Post image" class="post-image">
+      <div class="post-preview">
+        <h2 style="font-size: 1.5rem;">
+          <a href="single.html">Peace</a>
+        </h2>
+        <div class="post-meta">
+          <i class="fa-regular fa-user"></i> Christopher Lee &nbsp;&nbsp;
+          <i class="fa-regular fa-calendar"></i> April 20, 2025
+        </div>
+        <p class="preview-text">
+          Islam emphasizes peace as a core principle, derived from the Arabic root "s-l-m" which also means "peace"
+        </p>
+        <a href="single.html" class="btn">Read More</a>
+      </div>
+    </div>
+
+  </div>
+  <div class="slid-bar"></div>
+</div>
+    </div>
+    <div class="slid-bar"></div>
+  </div>
+
+<div class="container">
+        <h1>comment</h1>
+        <form method="POST">
+            Name: <input type="text" name="name">
+            describe: <input type="text" name="comment">
+            <button type="submit" name="submit"> submit</button>
+        </form>
+    </div>
+    <!--footer-->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About This Blog</h3>
+        <p>This blog shares inspiring stories, reflections, and thoughts to help you grow and find meaning in life.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="gellery.html">Posts</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 YourBlogName. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
+
+
+
+
+
+  
